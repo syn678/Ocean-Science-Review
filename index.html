@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海洋科学复习平台</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>海洋科学复习平台</h1>
+        <p>探索海洋的奥秘，掌握海洋科学知识</p>
+        <div class="ocean-wave"></div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home" class="active">首页</a></li>
+            <li><a href="#knowledge">知识点</a></li>
+            <li><a href="#stories">故事会</a></li>
+            <li><a href="#tools">学习工具</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="home">
+            <h2>欢迎来到海洋科学复习平台</h2>
+            <p>这里为您提供海洋科学的核心知识点和有趣的海洋故事，帮助您更好地复习和理解海洋科学知识。</p>
+            <p>平台包含以下模块：</p>
+            <ul>
+                <li><strong>知识点</strong>：系统整理海洋科学的核心概念和重要知识点</li>
+                <li><strong>故事会</strong>：通过生动有趣的故事了解海洋的奥秘</li>
+                <li><strong>学习工具</strong>：提供海洋科学相关的在线工具和资源</li>
+            </ul>
+            
+            <!-- 海洋小知识滚动视窗 -->
+            <div class="scroll-window">
+                <h3>海洋小知识</h3>
+                <div class="scroll-content">
+                    <div class="scroll-item">
+                        <strong>海洋覆盖面积</strong>
+                        <p>海洋覆盖了地球表面约71%的面积，是地球上最大的生态系统。</p>
+                    </div>
+                    <div class="scroll-item">
+                        <strong>最深海沟</strong>
+                        <p>马里亚纳海沟是世界上最深的海沟，深度达到11034米。</p>
+                    </div>
+                    <div class="scroll-item">
+                        <strong>海洋生物</strong>
+                        <p>海洋中生活着约20万种已知生物，可能还有数百万种未被发现。</p>
+                    </div>
+                    <div class="scroll-item">
+                        <strong>海洋氧气</strong>
+                        <p>海洋中的浮游植物产生了地球上约50%的氧气。</p>
+                    </div>
+                    <div class="scroll-item">
+                        <strong>海水盐度</strong>
+                        <p>海水的平均盐度约为3.5%，相当于每升海水中含有35克盐。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="knowledge">
+            <h2>知识点</h2>
+            
+            <!-- 知识主题选择 -->
+            <div class="knowledge-topics">
+                <button class="topic-btn active" data-topic="upwelling">沿岸上升流</button>
+                <button class="topic-btn" data-topic="multi-scale">海洋多尺度过程</button>
+                <button class="topic-btn" data-topic="temperature-salinity">温盐</button>
+                <button class="topic-btn" data-topic="500m-salinity">500米深度海水盐度</button>
+                <button class="topic-btn" data-topic="ocean-crust-age">大洋地壳年龄分布</button>
+                <button class="topic-btn" data-topic="ocean-optics">海水光学过程</button>
+                <button class="topic-btn" data-topic="temp-salinity-profile">温盐电导率垂直剖面</button>
+                <button class="topic-btn" data-topic="thermocline-maintenance">温跃层维持机制</button>
+                <button class="topic-btn" data-topic="ns-equation">NS方程推导</button>
+            </div>
+            
+            <!-- 沿岸上升流知识 -->
+            <div id="upwelling-topic" class="knowledge-panel">
+                <div class="knowledge-carousel-wrapper">
+                    <div class="knowledge-carousel-track">
+                        <div class="knowledge-carousel-item" data-knowledge="theory" data-topic="upwelling">
+                            <img src="../沿岸上升流/微信图片_20260409132640_282_37.jpg" alt="基础理论" />
+                            <span class="knowledge-name">基础理论</span>
+                        </div>
+                        <div class="knowledge-carousel-item" data-knowledge="formation" data-topic="upwelling">
+                            <img src="../沿岸上升流/微信图片_20260409132649_284_37.jpg" alt="形成机制" />
+                            <span class="knowledge-name">形成机制</span>
+                        </div>
+                        <div class="knowledge-carousel-item" data-knowledge="ecology" data-topic="upwelling">
+                            <img src="../沿岸上升流/微信图片_20260409132653_285_37.jpg" alt="生态效应" />
+                            <span class="knowledge-name">生态效应</span>
+                        </div>
+                        <div class="knowledge-carousel-item" data-knowledge="summary" data-topic="upwelling">
+                            <img src="../沿岸上升流/微信图片_20260409132700_286_37.jpg" alt="重点总结" />
+                            <span class="knowledge-name">重点总结</span>
+                        </div>
+                    </div>
+                    <button class="knowledge-carousel-prev">‹</button>
+                    <button class="knowledge-carousel-next">›</button>
+                </div>
+            </div>
+            
+            <!-- 海洋多尺度过程知识 -->
+            <div id="multi-scale-topic" class="knowledge-panel" style="display: none;">
+                <div class="knowledge-carousel-wrapper">
+                    <div class="knowledge-carousel-track">
+                        <div class="knowledge-carousel-item" data-knowledge="spectral" data-topic="multi-scale">
+                            <img src="../海洋多尺度过程时空谱图/微信图片_20260409132427_266_37.jpg" alt="时空谱图" />
+                            <span class="knowledge-name">时空谱图分析</span>
+                        </div>
+                    </div>
+                    <button class="knowledge-carousel-prev">‹</button>
+                    <button class="knowledge-carousel-next">›</button>
+                </div>
+            </div>
+            
+            <!-- 温盐知识 -->
+            <div id="temperature-salinity-topic" class="knowledge-panel" style="display: none;">
+                <div class="knowledge-carousel-wrapper">
+                    <div class="knowledge-carousel-track">
+                        <div class="knowledge-carousel-item" data-knowledge="temperature-salinity" data-topic="temperature-salinity">
+                            <img src="../温盐/屏幕截图 2026-04-09 185534.png" alt="温盐图" />
+                            <span class="knowledge-name">温盐分析</span>
+                        </div>
+                    </div>
+                    <button class="knowledge-carousel-prev">‹</button>
+                    <button class="knowledge-carousel-next">›</button>
+                </div>
+            </div>
+            
+            <!-- 500米深度海水盐度知识 -->
+            <div id="500m-salinity-topic" class="knowledge-panel" style="display: none;">
+                <div class="knowledge-carousel-wrapper">
+                    <div class="knowledge-carousel-track">
+                        <div class="knowledge-carousel-item" data-knowledge="500m-salinity" data-topic="500m-salinity">
+                            <img src="../500 米深度海水盐度/屏幕截图 2026-04-09 191024.png" alt="500米深度海水盐度" />
+                            <span class="knowledge-name">500米深度海水盐度</span>
+                        </div>
+                    </div>
+                    <button class="knowledge-carousel-prev">‹</button>
+                    <button class="knowledge-carousel-next">›</button>
+                </div>
+            </div>
+            
+            <!-- 大洋地壳年龄分布知识 -->
+            <div id="ocean-crust-age-topic" class="knowledge-panel" style="display: none;">
+                <div class="knowledge-carousel-wrapper">
+                    <div class="knowledge-carousel-track">
+                        <div class="knowledge-carousel-item" data-knowledge="ocean-crust-age" data-topic="ocean-crust-age">
+                            <img src="../大洋地壳年龄分布/屏幕截图 2026-04-09 193112.png" alt="大洋地壳年龄分布" />
+                            <span class="knowledge-name">大洋地壳年龄分布</span>
+                        </div>
+                    </div>
+                    <button class="knowledge-carousel-prev">‹</button>
+                    <button class="knowledge-carousel-next">›</button>
+                </div>
+            </div>
+            
+            <!-- 海水光学过程知识 -->
+            <div id="ocean-optics-topic" class="knowledge-panel" style="display: none;">
+                <div class="knowledge-carousel-wrapper">
+                    <div class="knowledge-carousel-track">
+                        <div class="knowledge-carousel-item" data-knowledge="ocean-optics" data-topic="ocean-optics">
+                            <img src="../海水光学过程示意图/屏幕截图 2026-04-09 194206.png" alt="海水光学过程" />
+                            <span class="knowledge-name">海水光学过程</span>
+                        </div>
+                    </div>
+                    <button class="knowledge-carousel-prev">‹</button>
+                    <button class="knowledge-carousel-next">›</button>
+                </div>
+            </div>
+            
+            <!-- 温盐电导率垂直剖面知识 -->
+            <div id="temp-salinity-profile-topic" class="knowledge-panel" style="display: none;">
+                <div class="knowledge-carousel-wrapper">
+                    <div class="knowledge-carousel-track">
+                        <div class="knowledge-carousel-item" data-knowledge="temp-salinity-profile" data-topic="temp-salinity-profile">
+                            <img src="../海水温  盐  电导率垂直剖面图/屏幕截图 2026-04-09 193734.png" alt="温盐电导率垂直剖面" />
+                            <span class="knowledge-name">温盐电导率垂直剖面</span>
+                        </div>
+                    </div>
+                    <button class="knowledge-carousel-prev">‹</button>
+                    <button class="knowledge-carousel-next">›</button>
+                </div>
+            </div>
+            
+            <!-- 温跃层维持机制知识 -->
+            <div id="thermocline-maintenance-topic" class="knowledge-panel" style="display: none;">
+                <div class="knowledge-carousel-wrapper">
+                    <div class="knowledge-carousel-track">
+                        <div class="knowledge-carousel-item" data-knowledge="thermocline-maintenance" data-topic="thermocline-maintenance">
+                            <img src="../温跃层维持机制/屏幕截图 2026-04-09 195303.png" alt="温跃层维持机制" />
+                            <span class="knowledge-name">温跃层维持机制</span>
+                        </div>
+                    </div>
+                    <button class="knowledge-carousel-prev">‹</button>
+                    <button class="knowledge-carousel-next">›</button>
+                </div>
+            </div>
+            
+            <!-- NS方程推导知识 -->
+            <div id="ns-equation-topic" class="knowledge-panel" style="display: none;">
+                <div class="knowledge-carousel-wrapper">
+                    <div class="knowledge-carousel-track">
+                        <div class="knowledge-carousel-item" data-knowledge="ns-equation-1" data-topic="ns-equation">
+                            <img src="../NS方程推导/e0b65c9dc15aa2f09f769b7a82db2be5.jpg" alt="NS方程推导1" />
+                            <span class="knowledge-name">NS方程推导1</span>
+                        </div>
+                        <div class="knowledge-carousel-item" data-knowledge="ns-equation-2" data-topic="ns-equation">
+                            <img src="../NS方程推导/ecb1b8f8662efb791939652ee848b9d5.jpg" alt="NS方程推导2" />
+                            <span class="knowledge-name">NS方程推导2</span>
+                        </div>
+                    </div>
+                    <button class="knowledge-carousel-prev">‹</button>
+                    <button class="knowledge-carousel-next">›</button>
+                </div>
+            </div>
+            
+            <!-- 知识点详情页面 -->
+            <div id="knowledge-detail" style="display: none; margin-top: 3rem;">
+                <button id="back-to-knowledge" class="tool-link" style="margin-bottom: 1rem;">返回知识点</button>
+                
+                <!-- 沿岸上升流详情 -->
+                <div id="upwelling-details">
+                    <!-- 基础理论详情 -->
+                    <div id="theory-detail" class="knowledge-card" style="display: none;">
+                        <h4>一、基础理论（地转平衡、Ekman漂流）</h4>
+                        <ul>
+                            <li><strong>1. 地转平衡</strong></li>
+                            <li>地转平衡位置参数，相关的公式：</li>
+                            <li>Q = (f + β) / H = 参量</li>
+                            <li>- f：科氏参数，随纬度增大而增大</li>
+                            <li>- β：行星涡度，随纬度变化</li>
+                            <li>- H：海水深度</li>
+                            <li>地转平衡特点：</li>
+                            <li>1. 同纬度，H变化 → 地转流变化</li>
+                            <li>2. H不变，北向流动 → f变化导致地转流变化</li>
+                            <li>3. β→0时，f与H同尺度变化，称为Sverdrup平衡流</li>
+                            
+                            <li><strong>2. Ekman漂流</strong></li>
+                            <li>风场作用下，表层海水流动方向：</li>
+                            <li>- 北半球：向右偏转45°</li>
+                            <li>- 南半球：向左偏转45°</li>
+                            
+                            <li><strong>3. Ekman抽吸</strong></li>
+                            <li>Ekman层底部由于摩擦引起的垂直运动：</li>
+                            <li>- 辐散 → 海水从深层向上补充</li>
+                            <li>- 辐合 → 海水向深层下沉</li>
+                            
+                            <li><strong>4. Sverdrup平衡</strong></li>
+                            <li>风生Ekman输运使海水在大洋西部堆积，表层海水向岸运动，形成密度跃层，是冷上升流的重要机制</li>
+                            
+                            <li><strong>5. 西向强化</strong></li>
+                            <li>Sverdrup平衡在大洋西部，由于强的西边界流（如墨西哥湾流）的存在，使得西边界流成为深海环流的重要组成部分</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 形成机制详情 -->
+                    <div id="formation-detail" class="knowledge-card" style="display: none;">
+                        <h4>二、沿岸上升流的形成机制</h4>
+                        <ul>
+                            <li><strong>1. 风场作用</strong></li>
+                            <li>沿岸风场通过Ekman输运导致<strong>离岸</strong>的海水输运，深层海水向上补充，形成沿岸上升流</li>
+                            
+                            <li><strong>2. 离岸风的 Ekman 输运</strong></li>
+                            <li>- 北半球：风平行于岸线吹 → 海水离岸输运 → 上升流</li>
+                            <li>- 南半球：风平行于岸线吹 → 海水离岸输运 → 上升流</li>
+                            <li>总之，Ekman输运导致沿岸深层海水上升</li>
+                            
+                            <li><strong>3. 主要因素</strong></li>
+                            <li>- 季风驱动</li>
+                            <li>- 科里奥利力的影响</li>
+                            <li>- 海底地形和海岸线形状的影响</li>
+                            <li>- 沿岸流与上升流的相互作用</li>
+                            
+                            <li><strong>4. 上升流的强度和特征</strong></li>
+                            <li>- 上升流区的水团特征（低温、高盐、高营养盐）</li>
+                            <li>- 上升流的强度和范围受季风和地形影响</li>
+                            
+                            <li><strong>5. 地转平衡在上升流中的作用</strong></li>
+                            <li>当风生使海水堆积（H增大），科里奥利力平衡时，形成沿岸上升流的结构</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 生态效应详情 -->
+                    <div id="ecology-detail" class="knowledge-card" style="display: none;">
+                        <h4>三、沿岸上升流的生态效应</h4>
+                        <ul>
+                            <li><strong>1. 上升流区的生物生产</strong></li>
+                            <li>上升流将深层营养物质带到表层，促进浮游植物生长，形成高生产力区</li>
+                            
+                            <li><strong>2. 上升流对海洋生物的影响</strong></li>
+                            <li>上升流区是重要的渔场，支持丰富的渔业资源</li>
+                            
+                            <li><strong>3. 上升流与海洋生态系统</strong></li>
+                            <li>强上升流区的渔业资源丰富，但也可能导致底层缺氧现象</li>
+                            
+                            <li><strong>4. 上升流的环境影响</strong></li>
+                            <li>上升流对气候和海洋环境有重要影响</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 重点总结详情 -->
+                    <div id="summary-detail" class="knowledge-card" style="display: none;">
+                        <h4>四、重点总结</h4>
+                        <ul>
+                            <li>1. 地转平衡是海洋环流的基本原理</li>
+                            <li>2. 风生Ekman输运，导致离岸辐散</li>
+                            <li>3. 离岸辐散导致Sverdrup平衡和冷上升流</li>
+                            <li>4. 西向强化形成强的西边界流</li>
+                            <li>5. 沿岸风驱动离岸Ekman输运，导致上升流</li>
+                            <li>6. 上升流区是重要的渔业资源，支持高生产力</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 海洋多尺度过程详情 -->
+                <div id="multi-scale-details">
+                    <div id="spectral-detail" class="knowledge-card" style="display: none;">
+                        <h4>海洋多尺度过程时空谱图</h4>
+                        <ul>
+                            <li><strong>一、坐标轴与核心逻辑</strong></li>
+                            <li><strong>坐标轴定义</strong></li>
+                            <li>- 纵轴（Time Scales，时间尺度，对数坐标）：从1秒到100年，代表海洋过程发生、变化的时间周期/持续时间</li>
+                            <li>- 横轴（Horizontal Spatial Scales，水平空间尺度，对数坐标）：从1mm到10,000km，代表海洋过程影响的空间范围</li>
+                            <li><strong>核心规律</strong>：海洋过程遵循尺度对应性：空间尺度越大，时间尺度越长（大尺度过程变化慢、影响久；小尺度过程变化快、影响局地），是地球流体力学的核心特征之一</li>
+                            <li><strong>趣味参照</strong>：</li>
+                            <li>- 《后天》（The Day After Tomorrow）：对应气候尺度（百年级），是大尺度海洋-大气耦合系统的艺术化夸张</li>
+                            <li>- 红酒入杯：对应微观小尺度（秒-分钟、毫米级），展示分子扩散、湍流混合等微观过程</li>
+                            
+                            <li><strong>二、按尺度层级拆解核心过程</strong></li>
+                            <li><strong>1. 微观小尺度过程（秒-分钟、毫米-米级）</strong></li>
+                            <li>过程名称：Molecular Processes（分子过程），尺度特征：1秒、1mm级，核心知识点：海洋最基础的微观过程，包括分子扩散、分子粘性，是海洋混合的底层机制，仅在极端平静环境中主导，实际海洋中被湍流过程覆盖</li>
+                            <li>过程名称：Individual Movement（个体运动），尺度特征：分钟-小时、厘米-分米级，核心知识点：海洋生物（如浮游生物）的个体游动、颗粒物沉降运动，是海洋生态系统的微观基础</li>
+                            <li>过程名称：Turbulent Patch Size（湍流斑块尺度），尺度特征：分钟-小时、分米-米级，核心知识点：海洋湍流的核心尺度，是海洋动量、热量、盐度混合的主要载体，由剪切力、浮力等驱动，是小尺度能量耗散的关键</li>
+                            <li>过程名称：Langmuir Cells（朗缪尔环流），尺度特征：小时级、米-百米级，核心知识点：风驱动的表层螺旋状环流，由风应力和波浪相互作用产生，会将表层浮油、浮游生物聚集成条带，是上层海洋混合的重要过程</li>
+                            <li>过程名称：Surface Waves（表面波），尺度特征：秒-小时、米-百米级，核心知识点：日常可见的海浪，由风直接驱动，周期从几秒（风浪）到几十秒（涌浪），是海气界面动量交换的核心载体</li>
+                            
+                            <li><strong>2. 中观次中尺度过程（小时-天、百米-公里级）</strong></li>
+                            <li>过程名称：Inertial/Internal & Solitary Waves（惯性流/内波/孤立波），尺度特征：小时-天、百米-百公里级，核心知识点：海洋内部的波动过程：①惯性流：科氏力作用下的水体振荡，中纬度周期约17小时；②内波：海水层结下的内部波动，振幅可达百米，是海洋内部能量传递、混合的关键；③孤立内波：非线性内波，常见于陆架坡折区，对海洋工程、声学传播影响极大</li>
+                            <li>过程名称：Internal Tides（内潮），尺度特征：天级、公里-百公里级，核心知识点：潮汐作用在层结海水中激发的内波，是深海混合的重要能量来源，周期与天文潮一致（半日/全日潮）</li>
+                            <li>过程名称：Surface Tides（表面潮），尺度特征：天级、公里-百公里级，核心知识点：天文引潮力驱动的海面升降运动，是全球海洋最规律的大尺度波动，周期12.4小时（半日潮）或24.8小时（全日潮）</li>
+                            <li>过程名称：Plankton Migration（浮游生物垂直迁移），尺度特征：天级、百米-公里级，核心知识点：浮游生物的昼夜垂直迁移：白天潜至深海躲避捕食，夜间上浮至表层摄食，是海洋生物泵的核心过程，影响海洋碳循环</li>
+                            <li>过程名称：Phytoplankton Blooms（浮游植物藻华），尺度特征：周-月级、公里-百公里级，核心知识点：营养盐、光照充足时浮游植物爆发性增殖，常见于春季上升流区、河口区，是海洋生态系统的关键事件，影响全球碳循环</li>
+                            
+                            <li><strong>3. 中尺度过程（天-月、百公里-千公里级，黑色圆圈标注核心区）</strong></li>
+                            <li>过程名称：Fronts, Eddies & Filaments（锋面、涡旋、丝状物），尺度特征：天-月级、百公里-千公里级，核心知识点：海洋中尺度动力过程的核心：①中尺度涡：直径10-1000km、生命周期数周-数月的涡旋，是海洋的"天气系统"，携带大量动量、热量、盐度，影响全球环流；②锋面：水团性质（温盐密）的突变界面，是涡旋、上升流的伴生过程，也是渔业资源富集区；③丝状物：锋面延伸出的细长水团结构，是中尺度过程的典型特征</li>
+                            <li>过程名称：Coastally Trapped Waves（沿岸陷波），尺度特征：天-月级、百公里-千公里级，核心知识点：仅在陆架区域传播的trapped波动，由风场、地形驱动，影响沿岸海平面、环流，是沿岸海洋过程的核心</li>
+                            <li>过程名称：Synoptic Storms, River Outflows, & Sediment Resuspension（天气尺度风暴、河流冲淡水、泥沙再悬浮），尺度特征：天-周级、公里-百公里级，核心知识点：天气尺度过程对海洋的影响：①风暴引发的强风混合、泥沙再悬浮；②河流冲淡水在近岸形成的低盐羽流，影响近岸环流与生态</li>
+                            
+                            <li><strong>4. 大尺度气候尺度过程（月-百年、千公里-万公里级）</strong></li>
+                            <li>过程名称：Seasonal MLD & Biomass Cycles（季节混合层深度与生物量循环），尺度特征：月-年级、千公里级，核心知识点：上层海洋的季节变化：冬季风强，混合层深；夏季层结强，混合层浅，对应浮游生物生物量的季节循环，是海洋生态系统的季节节律</li>
+                            <li>过程名称：ENSO（厄尔尼诺-南方涛动），尺度特征：年级、千公里-万公里级，核心知识点：热带太平洋的海气耦合振荡，周期2-7年，是全球气候变率的最强信号，通过遥相关影响全球天气、海洋环流</li>
+                            <li>过程名称：Decadal Oscillations/ Fish Regime Shifts（年代际振荡/鱼类种群regime转变），尺度特征：10年级、千公里-万公里级，核心知识点：海洋的年代际气候变率（如PDO太平洋年代际振荡、AMO大西洋多年代际振荡），会引发鱼类种群的长期结构转变，影响渔业资源</li>
+                            <li>过程名称：CLIMATE（气候），尺度特征：百年级、全球尺度，核心知识点：海洋-大气系统的长期气候态，包括温盐环流（AMOC）、全球海洋环流，是地球气候系统的核心调节器，《后天》的设定即基于此尺度过程</li>
+                            
+                            <li><strong>三、核心科学意义</strong></li>
+                            <li>1. 尺度层级与能量级联：海洋能量从大尺度环流（气候尺度）向中尺度涡、小尺度湍流逐级传递，最终以分子耗散的形式转化为热量，是海洋能量循环的核心逻辑</li>
+                            <li>2. 跨尺度相互作用：小尺度过程（如湍流混合）会影响大尺度环流（如温盐环流），大尺度过程（如ENSO）会调制中尺度涡、藻华等中小尺度过程，海洋系统是多尺度耦合的整体</li>
+                            <li>3. 研究与应用价值：</li>
+                            <li>- 小尺度过程：海洋工程、声学探测、海洋混合研究</li>
+                            <li>- 中尺度过程：海洋预报、渔业资源、海洋环境监测</li>
+                            <li>- 大尺度过程：气候预测、全球变化研究</li>
+                            
+                            <li><strong>四、尺度对应性直观理解</strong></li>
+                            <li>尺度层级：微观，空间尺度：毫米-米，时间尺度：秒-小时，类比：红酒入杯的分子扩散、湍流混合</li>
+                            <li>尺度层级：中观，空间尺度：米-百公里，时间尺度：小时-月，类比：海浪、内波、藻华</li>
+                            <li>尺度层级：中尺度，空间尺度：百公里-千公里，时间尺度：月-年，类比：海洋涡旋（海洋的"台风"）</li>
+                            <li>尺度层级：大尺度/气候，空间尺度：千公里-全球，时间尺度：年-百年，类比：全球环流、ENSO、《后天》中的气候灾变</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 温盐详情 -->
+                <div id="temperature-salinity-details">
+                    <div id="temperature-salinity-detail" class="knowledge-card" style="display: none;">
+                        <h4>温盐分析</h4>
+                        <ul>
+                            <li><strong>一、温度和盐度的基本概念</strong></li>
+                            <li><strong>温度（Temperature）</strong>：海洋的热力状态，影响海水密度、环流和生态系统</li>
+                            <li><strong>盐度（Salinity）</strong>：海水中溶解盐类的含量，影响海水密度和结冰点</li>
+                            <li><strong>温盐图（T-S Diagram）</strong>：展示海水温度与盐度关系的图表，用于识别水团</li>
+                            
+                            <li><strong>二、温盐分布特征</strong></li>
+                            <li><strong>表层分布</strong>：受太阳辐射、大气环流和洋流影响，呈现纬度地带性</li>
+                            <li><strong>垂直分布</strong>：形成温跃层和盐跃层，影响海洋分层结构</li>
+                            <li><strong>季节变化</strong>：受季节 heating 和 cooling 影响，混合层深度发生变化</li>
+                            
+                            <li><strong>三、温盐对海洋环流的影响</strong></li>
+                            <li><strong>密度驱动环流</strong>：温度和盐度共同决定海水密度，驱动深层环流</li>
+                            <li><strong>温盐环流（Thermohaline Circulation）</strong>：全球尺度的海水循环系统，对气候调节至关重要</li>
+                            <li><strong>水团形成</strong>：不同温盐特征的水团在特定区域形成，如北大西洋深层水、南极底层水等</li>
+                            
+                            <li><strong>四、研究方法与应用</strong></li>
+                            <li><strong>观测方法</strong>：CTD（温盐深仪）、Argo浮标、卫星遥感等</li>
+                            <li><strong>数据分析</strong>：温盐图、水团分析、混合分析等</li>
+                            <li><strong>应用领域</strong>：气候预测、海洋资源开发、环境监测等</li>
+                            
+                            <li><strong>五、全球变化对温盐的影响</strong></li>
+                            <li>全球变暖导致海水温度升高，影响温跃层结构</li>
+                            <li>冰川融化和淡水输入改变海水盐度分布</li>
+                            <li>温盐变化可能影响全球温盐环流，进而影响全球气候</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 500米深度海水盐度详情 -->
+                <div id="500m-salinity-details">
+                    <div id="500m-salinity-detail" class="knowledge-card" style="display: none;">
+                        <h4>500米深度海水盐度</h4>
+                        <ul>
+                            <li><strong>一、500米深度的海洋环境特征</strong></li>
+                            <li><strong>深度位置</strong>：位于海洋上层与深层之间的过渡带，属于中层海洋</li>
+                            <li><strong>物理环境</strong>：光线微弱，温度相对稳定，压力约50个大气压</li>
+                            <li><strong>环流特征</strong>：受上层环流和深层环流的共同影响</li>
+                            
+                            <li><strong>二、全球500米深度盐度分布特征</strong></li>
+                            <li><strong>纬度分布</strong>：热带海域盐度较高，高纬度海域盐度较低</li>
+                            <li><strong>海域差异</strong>：大西洋盐度普遍高于太平洋和印度洋</li>
+                            <li><strong>区域特征</strong>：沿岸上升流区和河口区盐度较低，开阔海域盐度较为均匀</li>
+                            
+                            <li><strong>三、影响500米深度盐度的因素</strong></li>
+                            <li><strong>上层过程</strong>：蒸发与降水的平衡，河流淡水输入，海冰形成与融化</li>
+                            <li><strong>环流作用</strong>：表层环流的输送，深层水团的侵入</li>
+                            <li><strong>混合过程</strong>：湍流混合，内波作用，双扩散对流</li>
+                            
+                            <li><strong>四、500米深度盐度的生态意义</strong></li>
+                            <li>影响中层海洋生物的分布和生存</li>
+                            <li>调节海洋碳循环和营养盐分布</li>
+                            <li>作为海洋环境变化的重要指标</li>
+                            
+                            <li><strong>五、研究方法与数据来源</strong></li>
+                            <li><strong>观测手段</strong>：CTD剖面测量，Argo浮标网络，海洋观测站</li>
+                            <li><strong>数据分析</strong>：空间插值，时间序列分析，数值模拟</li>
+                            <li><strong>应用价值</strong>：海洋环流研究，气候预测，海洋资源评估</li>
+                            
+                            <li><strong>六、全球变化对500米深度盐度的影响</strong></li>
+                            <li>全球变暖可能导致海洋层结增强，影响垂直混合</li>
+                            <li>降水模式变化影响表层盐度，进而影响500米深度</li>
+                            <li>温盐环流的变化可能改变500米深度的水团结构</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 大洋地壳年龄分布详情 -->
+                <div id="ocean-crust-age-details" style="display: none;">
+                    <div id="ocean-crust-age-detail" class="knowledge-card">
+                        <h4>大洋地壳年龄分布</h4>
+                        <ul>
+                            <li><strong>一、基本特征</strong></li>
+                            <li>洋壳年龄以洋中脊（mid-ocean ridge）为中心，向两侧呈对称递增规律</li>
+                            <li>洋中脊处洋壳年龄最新（0 百万年），海沟处洋壳年龄最老（约 1.8 亿年）</li>
+                            <li>洋壳年龄与到洋中脊的距离成正比</li>
+                            
+                            <li><strong>二、海底扩张理论</strong></li>
+                            <li>洋中脊是新洋壳的诞生地，地幔物质上涌冷却形成新洋壳</li>
+                            <li>新洋壳持续推动老洋壳向两侧移动</li>
+                            <li>老洋壳最终在海沟处俯冲消亡</li>
+                            <li>洋壳年龄远小于大陆地壳（大陆地壳最老可达 40 亿年）</li>
+                            
+                            <li><strong>三、验证方法</strong></li>
+                            <li>磁异常条带分析</li>
+                            <li>深海钻探直接采样</li>
+                            <li>海洋地球物理测量</li>
+                            
+                            <li><strong>四、科学意义</strong></li>
+                            <li>是全球板块划分的核心依据</li>
+                            <li>可用于重建古海洋演化历史</li>
+                            <li>支撑海洋地质、古气候等多领域研究</li>
+                            <li>验证板块构造学说的重要证据</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 海水光学过程详情 -->
+                <div id="ocean-optics-details" style="display: none;">
+                    <div id="ocean-optics-detail" class="knowledge-card">
+                        <h4>海水光学过程</h4>
+                        <ul>
+                            <li><strong>一、核心概念</strong></li>
+                            <li><strong>固有光学量</strong>：仅由海水、悬浮物、叶绿素决定，包括吸收、散射，是海水的固有属性</li>
+                            <li><strong>辐射量</strong>：环境（太阳、天空）与海水相互作用产生的下行/上行辐照度，即光合有效辐射（PAR）</li>
+                            <li><strong>表观光学量</strong>：由固有光学量与环境共同决定，包括反射率（水色）、辐照度衰减</li>
+                            
+                            <li><strong>二、光在海水中的传播</strong></li>
+                            <li>蓝光在海水中穿透最深</li>
+                            <li>红光衰减最快</li>
+                            <li>清洁大洋海水呈蓝色</li>
+                            <li>近岸含大量悬浮物/叶绿素，水色偏绿/黄</li>
+                            
+                            <li><strong>三、应用价值</strong></li>
+                            <li><strong>水色遥感</strong>：通过观测海水反射率，反演叶绿素浓度、悬浮物、黄色物质等</li>
+                            <li><strong>初级生产力监测</strong>：基于叶绿素浓度反演</li>
+                            <li><strong>真光层深度</strong>：PAR决定了真光层（透光层）的深度（通常为0-200m）</li>
+                            <li><strong>海洋生态系统研究</strong>：光对浮游植物生长的影响</li>
+                            
+                            <li><strong>四、观测技术</strong></li>
+                            <li>卫星遥感（如MODIS、SeaWiFS）</li>
+                            <li>现场光学仪器测量</li>
+                            <li>实验室分光光度计分析</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 温盐电导率垂直剖面详情 -->
+                <div id="temp-salinity-profile-details" style="display: none;">
+                    <div id="temp-salinity-profile-detail" class="knowledge-card">
+                        <h4>温盐电导率垂直剖面</h4>
+                        <ul>
+                            <li><strong>一、海洋垂直分层结构</strong></li>
+                            <li><strong>温度（T）</strong>：表层混合层温度均匀，下方出现温跃层（温度随深度骤降），深层水温度稳定在0-4℃</li>
+                            <li><strong>盐度（S）</strong>：表层受蒸发、降水影响变幅大，深层水盐度稳定</li>
+                            <li><strong>电导率（C）</strong>：与盐度正相关，CTD通过电导率反演盐度</li>
+                            
+                            <li><strong>二、位温（θ）概念</strong></li>
+                            <li>位温是海水绝热抬升到海面的温度</li>
+                            <li>消除了压力对温度的影响</li>
+                            <li>用于深层水团的准确对比</li>
+                            <li>深层水压力大，现场温度略高于位温</li>
+                            
+                            <li><strong>三、CTD观测系统</strong></li>
+                            <li>CTD（温盐深仪）是海洋观测的核心设备</li>
+                            <li>同步测量温度、盐度、深度</li>
+                            <li>提供海洋垂直结构的基础数据</li>
+                            
+                            <li><strong>四、科学意义</strong></li>
+                            <li>研究海洋环流和水团运动</li>
+                            <li>分析海洋层化特征</li>
+                            <li>监测海洋环境变化</li>
+                            <li>支撑气候预测模型</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 温跃层维持机制详情 -->
+                <div id="thermocline-maintenance-details" style="display: none;">
+                    <div id="thermocline-maintenance-detail" class="knowledge-card">
+                        <h4>温跃层维持机制</h4>
+                        <ul>
+                            <li><strong>一、核心平衡原理</strong></li>
+                            <li>温跃层的维持是<strong>向下扩散（Downward diffusion）与向上平流/输送（Upward advection）</strong>动态平衡的结果</li>
+                            <li><strong>向下扩散</strong>：分子/湍流扩散将表层热量向下输送</li>
+                            <li><strong>向上平流</strong>：海水上涌或水平输送将深层热量/动量向上带</li>
+                            
+                            <li><strong>二、平衡方程</strong></li>
+                            <li>数学表达：A ∂T/∂z = wT</li>
+                            <li>其中：</li>
+                            <li>- A ∂T/∂z：涡旋扩散引起的热通量</li>
+                            <li>- wT：垂直运动（上涌/下沉）携带的热通量</li>
+                            
+                            <li><strong>三、物理意义</strong></li>
+                            <li>当扩散与平流的热量传输速率相等时，温跃层深度保持稳定</li>
+                            <li>若平衡被打破（如风力增强），温跃层会发生升降</li>
+                            <li>温跃层的稳定性对海洋环流和生态系统有重要影响</li>
+                            
+                            <li><strong>四、影响因素</strong></li>
+                            <li><strong>风力作用</strong>：风应力引起的混合和上涌</li>
+                            <li><strong>热通量</strong>：太阳辐射和海气热交换</li>
+                            <li><strong>淡水通量</strong>：降水、蒸发和河流输入</li>
+                            <li><strong>海洋环流</strong>：水平和垂直环流的影响</li>
+                            
+                            <li><strong>五、研究意义</strong></li>
+                            <li>理解海洋热收支和能量平衡</li>
+                            <li>预测气候变化对海洋层结的影响</li>
+                            <li>分析海洋生态系统的响应</li>
+                            <li>改进海洋数值模型</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- NS方程推导详情 -->
+                <div id="ns-equation-details" style="display: none;">
+                    <div id="ns-equation-1-detail" class="knowledge-card">
+                        <h4>NS方程推导</h4>
+                        <ul>
+                            <li><strong>一、基本概念</strong></li>
+                            <li>NS方程（Navier-Stokes方程）是描述流体运动的基本方程</li>
+                            <li>它是动量守恒定律在流体力学中的具体表现形式</li>
+                            <li>适用于牛顿流体的运动描述</li>
+                            
+                            <li><strong>二、方程形式</strong></li>
+                            <li>矢量形式：ρ(Du/Dt) = -∇p + μ∇²u + ρg</li>
+                            <li>其中：</li>
+                            <li>- ρ：流体密度</li>
+                            <li>- u：速度矢量</li>
+                            <li>- p：压力</li>
+                            <li>- μ：动力粘度</li>
+                            <li>- g：重力加速度</li>
+                            <li>- D/Dt：物质导数</li>
+                            
+                            <li><strong>三、推导步骤</strong></li>
+                            <li>1. 从动量守恒定律出发</li>
+                            <li>2. 考虑质量守恒</li>
+                            <li>3. 应用牛顿粘性定律</li>
+                            <li>4. 推导得到最终形式</li>
+                            
+                            <li><strong>四、应用领域</strong></li>
+                            <li>海洋环流模拟</li>
+                            <li>大气环流预报</li>
+                            <li>工程流体力学</li>
+                            <li>航空航天技术</li>
+                            
+                            <li><strong>五、学习资源</strong></li>
+                            <li><a href="../NS方程推导/黄芷琪3250100520 N-S方程.pptx" target="_blank" style="color: #2a5298; text-decoration: underline;">点击查看NS方程推导PPT</a></li>
+                            <li><strong>六、视频讲解</strong></li>
+                            <li>以下是熊学军老师关于NS方程推导的讲课视频：</li>
+                            <li>
+                                <div class="video-container">
+                                    <video controls width="100%" height="auto">
+                                        <source src="../熊学军老师讲课视频/海洋科学基础2026_20260409_20430564.mp4" type="video/mp4">
+                                        您的浏览器不支持视频播放。
+                                    </video>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="ns-equation-2-detail" class="knowledge-card" style="display: none;">
+                        <h4>NS方程推导（续）</h4>
+                        <ul>
+                            <li><strong>一、补充推导细节</strong></li>
+                            <li>详细的数学推导过程</li>
+                            <li>边界条件的处理</li>
+                            <li>初始条件的设定</li>
+                            
+                            <li><strong>二、数值解法</strong></li>
+                            <li>有限差分法</li>
+                            <li>有限元法</li>
+                            <li>谱方法</li>
+                            <li>有限体积法</li>
+                            
+                            <li><strong>三、简化形式</strong></li>
+                            <li>不可压缩流体的NS方程</li>
+                            <li>无粘性流体的欧拉方程</li>
+                            <li>边界层方程</li>
+                            
+                            <li><strong>四、计算流体力学应用</strong></li>
+                            <li>CFD软件的应用</li>
+                            <li>网格生成技术</li>
+                            <li>湍流模型</li>
+                            
+                            <li><strong>五、学习资源</strong></li>
+                            <li><a href="../NS方程推导/黄芷琪3250100520 N-S方程.pptx" target="_blank" style="color: #2a5298; text-decoration: underline;">点击查看NS方程推导PPT</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="stories">
+            <h2>故事会</h2>
+            
+            <!-- 故事会入口 -->
+            <div id="story-entrance">
+                <p>探索海洋科学的奇妙故事，了解海洋的奥秘和现象背后的科学原理。</p>
+                <button id="enter-stories" class="tool-link">进入故事会</button>
+            </div>
+            
+            <!-- 故事选择界面 -->
+            <div id="story-selection" style="display: none;">
+                <h3>选择故事</h3>
+                <div class="story-buttons">
+                    <button class="story-btn" data-story="wave">海洋表面重力波的故事</button>
+                    <button class="story-btn" data-story="upwelling">沿岸上升流的故事</button>
+                    <button class="story-btn" data-story="elnino">厄尔尼诺现象的故事</button>
+                    <button id="back-to-entrance" class="tool-link" style="margin-top: 2rem;">返回</button>
+                </div>
+            </div>
+            
+            <!-- 故事内容界面 -->
+            <div id="story-content" style="display: none;">
+                <button id="back-to-selection" class="tool-link" style="margin-bottom: 1rem;">返回故事选择</button>
+                
+                <!-- 海洋表面重力波故事 -->
+                <div id="wave-story" class="story-card" style="display: none;">
+                    <h4>海洋表面重力波的故事</h4>
+                    <p>这个听起来很专业的词汇，其实就是我们日常生活中看见的“海浪”。它们是由于重力（或者说是重力和水的密度差）而产生的波动。</p>
+                    
+                    <h5>🌊 故事一：风是舞者，重力是导演</h5>
+                    <h6>🎭 场景设定</h6>
+                    <p>想象一下，你是一位站在甲板上的船员，身边有一位叫“风儿”的调皮少年。他们决定玩一场“谁把海面搅动得更大”的游戏。</p>
+                    
+                    <h6>💨 起始：风儿的挑衅</h6>
+                    <p>风儿兴奋地跑来跑去（实际上是指吹动海面），用他的手（即风力）在海面上快速摩擦，像在海面上“搓痒痒”。这时，海水被推向一边，形成了一个隆起的波峰。</p>
+                    <p>解释：风是表面重力波最主要的“扰动机制”。当风吹过海面时，它对水体施加压力，迫使海水抬升形成波峰；随后，重力作为“恢复机制”，试图将抬高的水体拉回平衡位置，导致水体向下落，形成波谷。</p>
+                    
+                    <h6>⚖️ 过程：重力的回归</h6>
+                    <p>当风儿离开后，那个抬高的海水由于自身重量（重力）开始下沉。这个下沉的水体在水平面上会产生一种向外的压力差，推动周围的水向外流动。</p>
+                    <p>解释：水体在高处会产生更高的压强，形成指向周围的“压力梯度力”。这股力推动水体向外水平辐散，使得波峰最终下沉，而波谷抬升。</p>
+                    
+                    <h5>🌀 故事二：波的旅程 - 深水到浅水的“变形记”</h5>
+                    <h6>🌊 起航：在深海中自由奔跑</h6>
+                    <p>你的船在远离岸边的深海中航行。此时，表面重力波的形状类似于一条细细的绳子——它们的波长很长，波高（即波的高度）很小。</p>
+                    <p>解释：在深水区（即水深大于波长的1/2时），波的形状类似于半个正弦波，波速主要由波长决定，而与水深无关。</p>
+                    
+                    <h6>🏞️ 转折：靠近岸边的惊险</h6>
+                    <p>当船靠近岸边，海底的坡度开始对波浪产生影响。此时，波浪的底部会先接触到海底，而顶部还在自由地运动。</p>
+                    <p>解释：当波浪从深水区向浅水区传播时，波速会显著减慢（因为浅水波速主要由水深决定）。底部的减速导致波前部“堆积”，波高逐渐增大，这就是我们常说的“海浪汹涌”。</p>
+                    
+                    <h6>🌊 高潮：破浪而出</h6>
+                    <p>随着波浪继续靠近岸边，波高变得越来越大，波速变得越来越慢。最终，波浪无法维持平衡，崩塌下来。</p>
+                    <p>解释：波浪的能量被压缩在更小的空间内，导致波高极度增大。波浪的顶部会因重力作用而向下塌陷，这就是我们看到的“浪花飞溅”。</p>
+                    
+                    <h5>📝 小结</h5>
+                    <p>表面重力波就像是大自然中的舞蹈表演：</p>
+                    <ol>
+                        <li>风儿（扰动）：在海面上搓痒痒，制造波峰；</li>
+                        <li>重力（导演）：指挥水体上下起伏，维持平衡；</li>
+                        <li>海底（舞台）：在靠近岸边时，改变了舞蹈的节奏和动作，导致波浪变得汹涌甚至破碎。</li>
+                    </ol>
+                    <p>这个过程不仅仅是美丽的景象，也是海洋能量传输的重要方式，甚至可以被用来发电（如波浪能）。</p>
+                    <div style="margin: 1.5rem 0;">
+                        <a href="../表面重力波/Theory and Applications of Ocean Surface Waves.pptx" target="_blank" class="tool-link">
+                            📁 查看表面重力波PPT文件
+                        </a>
+                    </div>
+                    <p class="source">来源：海洋表面重力波故事会资料</p>
+                </div>
+                
+                <!-- 沿岸上升流故事 -->
+                <div id="upwelling-story" class="story-card" style="display: none;">
+                    <h4>沿岸上升流的故事</h4>
+                    <p>在广袤的海洋中，海水并不是静止的，而是像有呼吸的生物一样不断地运动。今天，我要给大家讲一个关于“大海的深呼吸”的故事——<strong>沿岸上升流</strong>的故事。</p>
+                    
+                    <h5>1. 故事的主角：调皮的海风与深处的“冷气团”</h5>
+                    <p>想象一下，大海的表面就像一块巨大的玻璃窗，下面的深层海水由于被压在深处，通常是冰冷且富含养分的，就像我们家里冰箱里的蔬菜一样新鲜，但这层“冷气团”却被压在底下，无法直接接触阳光。</p>
+                    <p>而我们的主角——<strong>海风</strong>，可是个调皮的小精灵。它喜欢在夏天的早晨，从陆地吹向大海。你有没有注意到，当风从陆地吹向海面时，它会把表层的暖水推开？这时，表层水不想留在岸边，它会被科里奥利力（地球自转产生的力）往右（北半球）或往左（南半球）推，离开岸边，去追逐更远的地方。</p>
+                    
+                    <h5>2. 神奇的“补偿”：深处的海水被抽吸上来</h5>
+                    <p>当表层的暖水被风吹走后，近岸的空位变得空荡荡的。为了填补这个空位，深处的“冷气团”不再安分，它们会“爬坡”向上冲，努力冲向海面，来填补这个被风吹走的空位。这种现象被称为<strong>沿岸上升流</strong>。</p>
+                    <p>就好像你家里有人把厨房的热气吹走了，屋子里的冷气（空调）就会被抽吸过来补位一样。</p>
+                    
+                    <h5>3. 故事的高潮：海底的“探险队”与海岸的丰收</h5>
+                    <p>当这股冷水冲向海面时，它带来了什么？带来了<strong>大量的养分</strong>。这些养分就像是海底沉积的有机物质，富含氮、磷等营养盐。</p>
+                    <p>当养分丰富的冷水和表层的阳光相遇时，神奇的事情发生了——<strong>浮游植物</strong>（海洋中的“草”）疯狂生长！于是，一条条鱼、虾、蟹、贝类都被吸引过来，形成了<strong>渔场</strong>。</p>
+                    
+                    <h5>4. 故事的结局：季节的变奏</h5>
+                    <p>这个故事并不是每时每刻都在上演的。它通常发生在<strong>夏季</strong>，当西南季风盛行时，风力最强，沿岸上升流也最明显。而在冬季，风向可能反过来，甚至会出现相反的<strong>下降流</strong>，把深层的冷水压回去。</p>
+                    
+                    <p><strong>小结</strong></p>
+                    <p>沿岸上升流就像大海的“深呼吸”——当表层的暖水被风吹走，深处的冷水就会吸气（上升），把养分带到海面，让海岸边的生命充满活力。这也是为什么沿岸地区往往是渔业最丰富的地方。</p>
+                    <p class="source">来源：沿岸上升流故事会资料</p>
+                </div>
+                
+                <!-- 厄尔尼诺故事 -->
+                <div id="elnino-story" class="story-card" style="display: none;">
+                    <h4>厄尔尼诺现象的故事</h4>
+                    <p>在遥远的太平洋深处，隐藏着一个古老而神秘的“天气故事”。这个故事并不是发生在城镇的巷子口，而是发生在浩瀚的大海与高空的气流之间。今天，我就带你走进这个关于“大自然调和与捣乱”的传说——厄尔尼诺现象。</p>
+                    
+                    <h5>故事：海风的调皮与渔民的哭泣</h5>
+                    <p>很久很久以前，太平洋的西边（靠近亚洲）和东边（靠近美洲）之间，住着两位截然不同的邻居。</p>
+                    
+                    <h6>角色介绍</h6>
+                    <ul>
+                        <li>东风大哥哥（信风）：他总是喜欢从东边吹向西边，带着清凉的海水，帮助西边的海面升温，西边的渔民（尤其是秘鲁沿海的渔民）因此过着丰收的日子。</li>
+                        <li>太平洋婆婆：住在赤道中东部的她，总是爱打盹儿，海面凉爽，海鱼活跃。</li>
+                    </ul>
+                    
+                    <h6>故事开端：调皮的东风</h6>
+                    <p>某一天，东风大哥哥突然心血来潮，决定休息几天，甚至把方向调反了，开始往东吹。这就像是你把空调调到了制热模式。</p>
+                    <p><strong>科学解释：</strong>正常情况下，东风把暖水推向西太平洋，东太平洋的海水被上升流带走，变冷（这就是为什么秘鲁沿海渔业非常发达的原因）。但是当东风减弱或反转时，热带太平洋的暖水就会向东移动，甚至蔓延到中东部，导致这些海域的海温异常升高。</p>
+                    
+                    <h6>渔民的哭泣：大西洋的“大雾”来了</h6>
+                    <p>这种突如其来的变化，导致了东边海域的渔民们陷入了深深的恐慌。</p>
+                    <p><strong>现实映射：</strong>在真实的历史中，这个现象被秘鲁渔民最先发现，因为“厄尔尼诺”在西班牙语中意为“小男孩”，传说是圣婴耶稣降生时海水变暖的预兆。</p>
+                    <ul>
+                        <li>秘鲁的渔民：他们发现鱼群突然消失，水变浑浊，甚至出现了不寻常的赤潮，渔获锐减，甚至绝收。</li>
+                        <li>印尼的渔民：远在太平洋西边的他们则发现海水变得异常温暖，原本丰富的鱼类开始离开，甚至出现干旱，农作物受损。</li>
+                    </ul>
+                    
+                    <h6>全球的连锁反应：一场“天气接力赛”</h6>
+                    <p>这个“调皮的天气”并不会只影响太平洋，它会通过大气环流把影响传递到世界的每一个角落。</p>
+                    <p><strong>科学解释：</strong>厄尔尼诺现象会扰乱热带太平洋的水温分布，进而改变全球的大气环流模式。例如，北半球的冬季风带可能减弱，导致亚洲部分地区的冬季变暖。</p>
+                    <ul>
+                        <li>南美沿海：暴雨洪涝，农作物受灾。</li>
+                        <li>非洲东部和澳大利亚：干旱少雨，粮食减产。</li>
+                        <li>北半球的冬季：暖冬，北美的飓风数量可能增加。</li>
+                        <li>中国：南方秋季多雨，北方地区冬季暖冬，华北地区夏季降水偏多，而长江中游可能降水偏少。</li>
+                    </ul>
+                    
+                    <h6>最新篇章：2023-2024年的“超级剧集”</h6>
+                    <p>最近一次（2023-2024年）的厄尔尼诺现象被认为是近年来最强的一次之一，甚至与2015-2016年的超强厄尔尼诺相媲美。这场气候剧集带来了以下“剧情”：</p>
+                    <ul>
+                        <li>全球升温：这次厄尔尼诺大大推动了2024年全球气温的创新高。</li>
+                        <li>农业影响：导致东南亚（如印尼、马来西亚）的棕榈油产量波动，进而影响全球粮油市场。</li>
+                        <li>极端天气：虽然厄尔尼诺结束，但其余波（如拉尼娜现象）仍在持续，导致全球范围内的极端天气频发。</li>
+                    </ul>
+                    
+                    <p><strong>小结：厄尔尼诺到底是什么？</strong></p>
+                    <p>简而言之，厄尔尼诺现象（El Niño）是指赤道中东部太平洋海水温度异常升高的现象。当这种升温现象持续一定时间（通常是半年以上）并达到一定强度（海温比常年偏高0.5℃以上）时，我们就称之为一次厄尔尼诺事件。</p>
+                    <p>它的本质是海洋与大气相互作用失衡的结果，虽然它是自然现象，但在全球变暖的大背景下，它的影响正变得越来越显著和剧烈。我们需要关注它，但更需要关注导致它频繁发生的根本原因——气候变化。</p>
+                    <p class="source">来源：厄尔尼诺故事会资料</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="tools">
+            <h2>学习工具</h2>
+            <p>这里提供了一些海洋科学学习相关的在线工具和资源，帮助您更直观地了解海洋现象和数据。</p>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h4>地球风、气象、海洋状况地图</h4>
+                    <p>实时查看全球海洋表面温度、洋流、风速等数据，直观了解海洋环境变化。</p>
+                    <a href="https://earth.nullschool.net/zh-cn/" target="_blank" class="tool-link">
+                        🌍 访问工具
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <h4>RAWGraphs 数据可视化工具</h4>
+                    <p>将海洋科学数据转化为直观的图表，帮助您分析和理解复杂的海洋数据。</p>
+                    <a href="https://app.rawgraphs.io/" target="_blank" class="tool-link">
+                        📊 访问工具
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <h4>NOAA 海洋气候数据</h4>
+                    <p>查看全球海洋温度变化趋势和历史数据，了解气候变化对海洋的影响。</p>
+                    <a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/global/time-series/globe/ocean/ytd/12/1880-2018" target="_blank" class="tool-link">
+                        📈 访问工具
+                    </a>
+                </div>
+                
+                <div class="tool-card">
+                    <h4>塔子老师 AI助学</h4>
+                    <p>使用AI辅助学习海洋科学知识，提供智能问答和学习资源推荐。</p>
+                    <a href="https://metaso.cn/" target="_blank" class="tool-link">
+                        🤖 访问工具
+                    </a>
+                </div>
+
+                <div class="tool-card">
+    			<h4>贪吃蛇学习模块</h4>
+    			<p>通过玩贪吃蛇游戏学习海洋科学知识，每吃到果实就会出现知识点。</p>
+    			<a href="snake-game.html" target="_blank" class="tool-link">
+        		    🐍 开始游戏
+    			</a>
+		   </div>
+        </section>
+
+        <section id="tickets">
+            <h2>出门票</h2>
+            <div class="tickets-carousel">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track">
+                        <div class="ticket-item">
+                            <img src="../出门票/58e909b0d8abc9425ea01c38ce9365a3.jpg" alt="出门票1" />
+                        </div>
+                        <div class="ticket-item">
+                            <img src="../出门票/95e17fa95008e19de2c327e54623ec1b.jpg" alt="出门票2" />
+                        </div>
+                        <div class="ticket-item">
+                            <img src="../出门票/b216f4f38cd3445b1d9a9c15f3587d68.jpg" alt="出门票3" />
+                        </div>
+                        <div class="ticket-item">
+                            <img src="../出门票/e82c12458f8282a767a417b7f61b665c.jpg" alt="出门票4" />
+                        </div>
+                        <div class="ticket-item">
+                            <img src="../出门票/补充.jpg" alt="出门票5" />
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-prev">‹</button>
+                    <button class="carousel-next">›</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 图片查看器 -->
+    <div id="image-viewer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000;">
+        <div class="viewer-content" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+            <button id="close-viewer" style="position: absolute; top: 20px; right: 20px; background: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; z-index: 1001;">×</button>
+            <img id="viewer-image" style="max-width: 90%; max-height: 90%; object-fit: contain;" src="" alt="" />
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 海洋科学复习平台. 保留所有权利.</p>
+    </footer>
+    
+    <script>
+        // 导航菜单激活状态
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 移除所有激活状态
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                // 添加当前激活状态
+                this.classList.add('active');
+                
+                // 滚动到对应 section
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        
+        // 故事会交互功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取元素
+            const storyEntrance = document.getElementById('story-entrance');
+            const storySelection = document.getElementById('story-selection');
+            const storyContent = document.getElementById('story-content');
+            const enterStoriesBtn = document.getElementById('enter-stories');
+            const backToEntranceBtn = document.getElementById('back-to-entrance');
+            const backToSelectionBtn = document.getElementById('back-to-selection');
+            const storyBtns = document.querySelectorAll('.story-btn');
+            
+            // 进入故事会
+            enterStoriesBtn.addEventListener('click', function() {
+                storyEntrance.style.display = 'none';
+                storySelection.style.display = 'block';
+            });
+            
+            // 返回入口
+            backToEntranceBtn.addEventListener('click', function() {
+                storySelection.style.display = 'none';
+                storyEntrance.style.display = 'block';
+            });
+            
+            // 返回选择
+            backToSelectionBtn.addEventListener('click', function() {
+                storyContent.style.display = 'none';
+                storySelection.style.display = 'block';
+                // 隐藏所有故事
+                document.querySelectorAll('[id$="-story"]').forEach(story => {
+                    story.style.display = 'none';
+                });
+            });
+            
+            // 选择故事
+            storyBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const storyId = this.getAttribute('data-story');
+                    storySelection.style.display = 'none';
+                    storyContent.style.display = 'block';
+                    
+                    // 隐藏所有故事
+                    document.querySelectorAll('[id$="-story"]').forEach(story => {
+                        story.style.display = 'none';
+                    });
+                    
+                    // 显示选中的故事
+                    document.getElementById(`${storyId}-story`).style.display = 'block';
+                });
+            });
+            
+            // 知识点功能
+            const topicBtns = document.querySelectorAll('.topic-btn');
+            const knowledgePanels = document.querySelectorAll('.knowledge-panel');
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const introItems = document.querySelectorAll('.intro-item');
+            const readMoreBtns = document.querySelectorAll('.read-more');
+            const knowledgeDetail = document.getElementById('knowledge-detail');
+            const backToKnowledgeBtn = document.getElementById('back-to-knowledge');
+            
+            // 轮播图功能
+            function initCarousels() {
+                document.querySelectorAll('.image-carousel').forEach(carousel => {
+                    const container = carousel.querySelector('.carousel-container');
+                    const items = container.querySelectorAll('.carousel-item');
+                    const prevBtn = carousel.querySelector('.carousel-prev');
+                    const nextBtn = carousel.querySelector('.carousel-next');
+                    let currentIndex = 0;
+                    
+                    // 自动轮播
+                    let interval = setInterval(nextSlide, 5000);
+                    
+                    function nextSlide() {
+                        items[currentIndex].classList.remove('active');
+                        currentIndex = (currentIndex + 1) % items.length;
+                        items[currentIndex].classList.add('active');
+                        
+                        // 同步更新简介
+                        const knowledgeId = items[currentIndex].getAttribute('data-knowledge');
+                        updateIntro(knowledgeId);
+                    }
+                    
+                    function prevSlide() {
+                        items[currentIndex].classList.remove('active');
+                        currentIndex = (currentIndex - 1 + items.length) % items.length;
+                        items[currentIndex].classList.add('active');
+                        
+                        // 同步更新简介
+                        const knowledgeId = items[currentIndex].getAttribute('data-knowledge');
+                        updateIntro(knowledgeId);
+                    }
+                    
+                    // 手动控制
+                    prevBtn.addEventListener('click', function() {
+                        clearInterval(interval);
+                        prevSlide();
+                        interval = setInterval(nextSlide, 5000);
+                    });
+                    
+                    nextBtn.addEventListener('click', function() {
+                        clearInterval(interval);
+                        nextSlide();
+                        interval = setInterval(nextSlide, 5000);
+                    });
+                    
+                    // 点击图片切换
+                    items.forEach((item, index) => {
+                        item.addEventListener('click', function() {
+                            clearInterval(interval);
+                            items[currentIndex].classList.remove('active');
+                            currentIndex = index;
+                            items[currentIndex].classList.add('active');
+                            
+                            // 同步更新简介
+                            const knowledgeId = this.getAttribute('data-knowledge');
+                            updateIntro(knowledgeId);
+                            
+                            interval = setInterval(nextSlide, 5000);
+                        });
+                    });
+                });
+            }
+            
+            // 更新简介
+            function updateIntro(knowledgeId) {
+                // 隐藏所有简介
+                introItems.forEach(intro => {
+                    intro.style.display = 'none';
+                });
+                
+                // 显示对应简介
+                const introItem = document.querySelector(`.intro-item[data-knowledge="${knowledgeId}"]`);
+                if (introItem) {
+                    introItem.style.display = 'block';
+                }
+            }
+            
+            // 主题切换
+            topicBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const topic = this.getAttribute('data-topic');
+                    
+                    // 更新按钮状态
+                    topicBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 显示对应面板
+                    knowledgePanels.forEach(panel => {
+                        panel.style.display = 'none';
+                    });
+                    document.getElementById(`${topic}-topic`).style.display = 'block';
+                    
+                    // 隐藏详情页面
+                    knowledgeDetail.style.display = 'none';
+                    
+                    // 重新初始化轮播
+                    setTimeout(initKnowledgeCarousels, 100);
+                });
+            });
+            
+            // 查看详情 - 使用事件委托
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('read-more')) {
+                    const btn = e.target;
+                    const knowledgeId = btn.getAttribute('data-knowledge');
+                    const introItem = btn.closest('.intro-item');
+                    const panelId = introItem.closest('.knowledge-panel').id;
+                    let topic;
+                    if (panelId === 'upwelling-topic') {
+                        topic = 'upwelling';
+                    } else if (panelId === 'multi-scale-topic') {
+                        topic = 'multi-scale';
+                    } else if (panelId === 'temperature-salinity-topic') {
+                        topic = 'temperature-salinity';
+                    } else if (panelId === '500m-salinity-topic') {
+                        topic = '500m-salinity';
+                    } else if (panelId === 'ocean-crust-age-topic') {
+                        topic = 'ocean-crust-age';
+                    } else if (panelId === 'ocean-optics-topic') {
+                        topic = 'ocean-optics';
+                    } else if (panelId === 'temp-salinity-profile-topic') {
+                        topic = 'temp-salinity-profile';
+                    } else if (panelId === 'thermocline-maintenance-topic') {
+                        topic = 'thermocline-maintenance';
+                    } else if (panelId === 'ns-equation-topic') {
+                        topic = 'ns-equation';
+                    }
+                    
+                    // 显示详情页面
+                    knowledgeDetail.style.display = 'block';
+                    
+                    // 隐藏所有详情容器
+                    document.getElementById('upwelling-details').style.display = 'none';
+                    document.getElementById('multi-scale-details').style.display = 'none';
+                    document.getElementById('temperature-salinity-details').style.display = 'none';
+                    document.getElementById('500m-salinity-details').style.display = 'none';
+                    document.getElementById('ocean-crust-age-details').style.display = 'none';
+                    document.getElementById('ocean-optics-details').style.display = 'none';
+                    document.getElementById('temp-salinity-profile-details').style.display = 'none';
+                    document.getElementById('thermocline-maintenance-details').style.display = 'none';
+                    document.getElementById('ns-equation-details').style.display = 'none';
+                    
+                    // 隐藏所有详情内容
+                    document.querySelectorAll('.knowledge-card').forEach(card => {
+                        card.style.display = 'none';
+                    });
+                    
+                    // 显示对应详情容器和内容
+                    document.getElementById(`${topic}-details`).style.display = 'block';
+                    document.getElementById(`${knowledgeId}-detail`).style.display = 'block';
+                }
+            });
+            
+            // 返回知识点 - 使用事件委托
+            document.addEventListener('click', function(e) {
+                if (e.target.id === 'back-to-knowledge') {
+                    knowledgeDetail.style.display = 'none';
+                }
+            });
+            
+            // 初始化轮播
+            initCarousels();
+        });
+        
+        // 出门票轮播功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const ticketsSection = document.getElementById('tickets');
+            const carouselTrack = ticketsSection.querySelector('.carousel-track');
+            const ticketItems = ticketsSection.querySelectorAll('.ticket-item');
+            const prevBtn = ticketsSection.querySelector('.carousel-prev');
+            const nextBtn = ticketsSection.querySelector('.carousel-next');
+            let currentIndex = 0;
+            const itemWidth = ticketItems[0].offsetWidth;
+            
+            // 轮播函数
+            function goToSlide(index) {
+                carouselTrack.style.transform = `translateX(-${index * itemWidth}px)`;
+                currentIndex = index;
+            }
+            
+            // 上一张
+            prevBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex - 1 + ticketItems.length) % ticketItems.length;
+                goToSlide(currentIndex);
+            });
+            
+            // 下一张
+            nextBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex + 1) % ticketItems.length;
+                goToSlide(currentIndex);
+            });
+            
+            // 自动轮播
+            let interval = setInterval(function() {
+                currentIndex = (currentIndex + 1) % ticketItems.length;
+                goToSlide(currentIndex);
+            }, 5000);
+            
+            // 图片查看功能
+            const imageViewer = document.getElementById('image-viewer');
+            const viewerImage = document.getElementById('viewer-image');
+            const closeViewer = document.getElementById('close-viewer');
+            
+            // 点击图片查看大图
+            ticketItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('img');
+                    viewerImage.src = img.src;
+                    viewerImage.alt = img.alt;
+                    imageViewer.style.display = 'block';
+                });
+            });
+            
+            // 关闭查看器
+            closeViewer.addEventListener('click', function() {
+                imageViewer.style.display = 'none';
+            });
+            
+            // 点击查看器外部关闭
+            imageViewer.addEventListener('click', function(e) {
+                if (e.target === imageViewer) {
+                    imageViewer.style.display = 'none';
+                }
+            });
+        });
+        
+        // 知识点轮播功能 - 存储每个面板的轮播状态
+        const carouselStates = new Map();
+        
+        function initKnowledgeCarousels() {
+            const panels = document.querySelectorAll('.knowledge-panel');
+            
+            panels.forEach(panel => {
+                // 如果已经初始化过，跳过
+                if (carouselStates.has(panel.id)) return;
+                
+                const track = panel.querySelector('.knowledge-carousel-track');
+                const items = panel.querySelectorAll('.knowledge-carousel-item');
+                const prevBtn = panel.querySelector('.knowledge-carousel-prev');
+                const nextBtn = panel.querySelector('.knowledge-carousel-next');
+                
+                if (!track || items.length === 0) return;
+                
+                // 存储轮播状态
+                const state = {
+                    currentIndex: 0,
+                    interval: null
+                };
+                carouselStates.set(panel.id, state);
+                
+                function goToSlide(index) {
+                    track.style.transform = `translateX(-${index * 100}%)`;
+                    state.currentIndex = index;
+                }
+                
+                // 上一张 - 只有当图片数量大于1时才生效
+                prevBtn.addEventListener('click', function() {
+                    if (items.length > 1) {
+                        const newIndex = (state.currentIndex - 1 + items.length) % items.length;
+                        goToSlide(newIndex);
+                    }
+                });
+                
+                // 下一张 - 只有当图片数量大于1时才生效
+                nextBtn.addEventListener('click', function() {
+                    if (items.length > 1) {
+                        const newIndex = (state.currentIndex + 1) % items.length;
+                        goToSlide(newIndex);
+                    }
+                });
+                
+                // 自动轮播 - 只有当图片数量大于1时才启动
+                if (items.length > 1) {
+                    state.interval = setInterval(function() {
+                        const newIndex = (state.currentIndex + 1) % items.length;
+                        goToSlide(newIndex);
+                    }, 5000);
+                }
+                
+                // 点击图片查看详情
+                items.forEach(item => {
+                    item.addEventListener('click', function() {
+                        const knowledgeId = this.getAttribute('data-knowledge');
+                        const topic = this.getAttribute('data-topic');
+                        const knowledgeDetailEl = document.getElementById('knowledge-detail');
+                        
+                        // 显示详情页面
+                        knowledgeDetailEl.style.display = 'block';
+                        
+                        // 隐藏所有详情容器
+                        document.getElementById('upwelling-details').style.display = 'none';
+                        document.getElementById('multi-scale-details').style.display = 'none';
+                        document.getElementById('temperature-salinity-details').style.display = 'none';
+                        document.getElementById('500m-salinity-details').style.display = 'none';
+                        
+                        // 隐藏所有详情内容
+                        document.querySelectorAll('.knowledge-card').forEach(card => {
+                            card.style.display = 'none';
+                        });
+                        
+                        // 显示对应的详情容器和内容
+                        document.getElementById(`${topic}-details`).style.display = 'block';
+                        document.getElementById(`${knowledgeId}-detail`).style.display = 'block';
+                        
+                        // 滚动到详情页面
+                        knowledgeDetailEl.scrollIntoView({ behavior: 'smooth' });
+                    });
+                });
+            });
+        }
+        
+        // 初始化知识点轮播
+        document.addEventListener('DOMContentLoaded', function() {
+            initKnowledgeCarousels();
+        });
+    </script>
+</body>
+</html>

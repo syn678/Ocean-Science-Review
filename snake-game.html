@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇学习模块 - 海洋科学复习</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1a5276;
+            margin-bottom: 20px;
+        }
+        
+        .game-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #e8f4f8;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        #gameCanvas {
+            display: block;
+            margin: 0 auto;
+            border: 2px solid #1a5276;
+            border-radius: 5px;
+        }
+        
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .knowledge-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .knowledge-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .knowledge-content h3 {
+            color: #1a5276;
+            margin-bottom: 15px;
+        }
+        
+        .knowledge-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .knowledge-content li {
+            margin-bottom: 8px;
+        }
+        
+        .knowledge-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            opacity: 0.8;
+        }
+        
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: #95a5a6;
+            color: white;
+        }
+        
+        .btn-success {
+            background-color: #27ae60;
+            color: white;
+        }
+        
+        .btn-danger {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .countdown {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            font-weight: bold;
+            color: #1a5276;
+            background-color: rgba(255,255,255,0.9);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 100;
+        }
+        
+        .pause-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .pause-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .pause-content h3 {
+            color: #1a5276;
+            margin-bottom: 15px;
+        }
+        
+        .pause-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .game-over-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .game-over-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+        
+        .game-over-content h3 {
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+        
+        .game-over-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .completion-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .completion-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+        
+        .completion-content h3 {
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>贪吃蛇学习模块 - 海洋科学复习</h1>
+        
+        <div class="game-container">
+            <div class="game-info">
+                <div>分数: <span id="score">0</span></div>
+                <div>知识点: <span id="knowledgeCount">0/10</span></div>
+            </div>
+            <canvas id="gameCanvas" width="600" height="400"></canvas>
+            <div class="countdown" id="countdown"></div>
+        </div>
+        
+        <a href="index.html" class="back-link">← 返回海洋科学复习平台</a>
+    </div>
+    
+    <!-- 知识点弹窗 -->
+    <div class="knowledge-modal" id="knowledgeModal">
+        <div class="knowledge-content">
+            <h3 id="knowledgeTitle">知识点</h3>
+            <div id="knowledgeBody"></div>
+            <div class="knowledge-buttons">
+                <button class="btn btn-primary" onclick="learned()">我学会了</button>
+                <button class="btn btn-secondary" onclick="reviewLater()">稍后再学</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 暂停弹窗 -->
+    <div class="pause-modal" id="pauseModal">
+        <div class="pause-content">
+            <h3>游戏暂停</h3>
+            <p>已学习的知识点：</p>
+            <ul id="learnedKnowledge"></ul>
+            <div class="pause-buttons">
+                <button class="btn btn-danger" onclick="exitGame()">退出游戏</button>
+                <button class="btn btn-success" onclick="resumeGame()">继续学习</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 游戏结束弹窗 -->
+    <div class="game-over-modal" id="gameOverModal">
+        <div class="game-over-content">
+            <h3>游戏结束</h3>
+            <p>最终分数: <span id="finalScore">0</span></p>
+            <p>已学习的知识点：</p>
+            <ul id="learnedKnowledgeList"></ul>
+            <div class="game-over-buttons">
+                <button class="btn btn-danger" onclick="exitGame()">退出游戏</button>
+                <button class="btn btn-success" onclick="restartGame()">重新开始</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 完成弹窗 -->
+    <div class="completion-modal" id="completionModal">
+        <div class="completion-content">
+            <h3>🎉 恭喜完成所有知识点！</h3>
+            <p>你已经成功学习了所有海洋科学知识点。</p>
+            <p>继续保持学习的热情！</p>
+            <div class="pause-buttons">
+                <button class="btn btn-danger" onclick="exitGame()">退出游戏</button>
+                <button class="btn btn-success" onclick="restartGame()">重新开始</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 游戏变量
+        let canvas, ctx;
+        let snake = [];
+        let food;
+        let gridSize = 20;
+        let direction = 'right';
+        let nextDirection = 'right';
+        let score = 0;
+        let speed = 10;
+        let gameInterval;
+        let isPaused = false;
+        let isGameOver = false;
+        
+        // 知识点系统
+        let knowledgePoints = [
+            {
+                title: "海洋表面重力波",
+                content: ["海洋表面重力波是由重力作为恢复力的波动", "它们是日常生活中常见的海浪", "波长范围从几厘米到数百米", "波高取决于风力、风时和风区"]
+            },
+            {
+                title: "温跃层维持机制",
+                content: ["温跃层是海水温度随深度急剧变化的水层", "主要由太阳辐射和水体混合共同作用形成", "夏季温跃层较明显，冬季较弱", "影响海洋生物分布和物质运输"]
+            },
+            {
+                title: "大洋地壳年龄分布",
+                content: ["大洋地壳年龄从洋中脊向两侧逐渐增加", "最年轻的地壳在洋中脊处形成", "最古老的大洋地壳约2亿年", "地壳年龄分布支持海底扩张理论"]
+            },
+            {
+                title: "海水光学过程",
+                content: ["海水对不同波长的光吸收程度不同", "红光在表层被吸收，蓝光穿透力最强", "光衰减系数随波长和海水浑浊度变化", "影响海洋初级生产力和生物分布"]
+            },
+            {
+                title: "海水温盐电导率",
+                content: ["海水电导率随温度升高而增加", "随盐度增加而增加", "垂直方向上存在明显的跃变层", "是海洋调查的重要参数"]
+            },
+            {
+                title: "沿岸上升流",
+                content: ["由风驱动的表层海水离岸运动引起", "深层冷海水上升补充", "富含营养盐，促进浮游生物生长", "形成重要的渔场"]
+            },
+            {
+                title: "厄尔尼诺现象",
+                content: ["赤道东太平洋海水异常升温的现象", "每2-7年发生一次", "影响全球气候模式", "导致一些地区干旱，另一些地区洪涝"]
+            },
+            {
+                title: "拉尼娜现象",
+                content: ["赤道东太平洋海水异常降温的现象", "与厄尔尼诺交替出现", "通常导致全球气候更加极端", "影响海洋生态系统"]
+            },
+            {
+                title: "海洋酸化",
+                content: ["由大气中二氧化碳增加引起", "海水pH值下降", "影响海洋生物的钙化过程", "威胁珊瑚礁和贝类生存"]
+            },
+            {
+                title: "海洋污染",
+                content: ["包括石油污染、塑料污染、重金属污染等", "对海洋生态系统造成严重危害", "影响人类健康和经济发展", "需要全球合作应对"]
+            }
+        ];
+        
+        let availableKnowledge = [...knowledgePoints];
+        let learnedKnowledge = [];
+        let currentKnowledge = null;
+        
+        // 初始化游戏
+        function init() {
+            canvas = document.getElementById('gameCanvas');
+            ctx = canvas.getContext('2d');
+            
+            // 初始化蛇
+            snake = [
+                { x: 10, y: 10 },
+                { x: 9, y: 10 },
+                { x: 8, y: 10 }
+            ];
+            
+            // 生成食物
+            generateFood();
+            
+            // 重置分数和知识点
+            score = 0;
+            availableKnowledge = [...knowledgePoints];
+            learnedKnowledge = [];
+            updateScore();
+            updateKnowledgeCount();
+            
+            // 开始游戏循环
+            gameInterval = setInterval(gameLoop, 1000 / speed);
+            
+            // 监听键盘事件
+            document.addEventListener('keydown', handleKeyDown);
+        }
+        
+        // 处理键盘事件
+        function handleKeyDown(e) {
+            switch(e.key) {
+                case 'ArrowUp':
+                    if (direction !== 'down') nextDirection = 'up';
+                    break;
+                case 'ArrowDown':
+                    if (direction !== 'up') nextDirection = 'down';
+                    break;
+                case 'ArrowLeft':
+                    if (direction !== 'right') nextDirection = 'left';
+                    break;
+                case 'ArrowRight':
+                    if (direction !== 'left') nextDirection = 'right';
+                    break;
+                case 'y':
+                case 'Y':
+                    if (!isPaused && !isGameOver) {
+                        pauseGame();
+                    }
+                    break;
+            }
+        }
+        
+        // 游戏主循环
+        function gameLoop() {
+            if (isPaused || isGameOver) return;
+            
+            // 更新方向
+            direction = nextDirection;
+            
+            // 移动蛇头
+            const head = { ...snake[0] };
+            switch(direction) {
+                case 'up':
+                    head.y--;
+                    break;
+                case 'down':
+                    head.y++;
+                    break;
+                case 'left':
+                    head.x--;
+                    break;
+                case 'right':
+                    head.x++;
+                    break;
+            }
+            
+            // 检查边界碰撞
+            if (head.x < 0 || head.x >= canvas.width / gridSize || 
+                head.y < 0 || head.y >= canvas.height / gridSize) {
+                gameOver();
+                return;
+            }
+            
+            // 检查自身碰撞
+            if (snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+                gameOver();
+                return;
+            }
+            
+            // 检查食物碰撞
+            if (head.x === food.x && head.y === food.y) {
+                // 增加分数
+                score += 10;
+                updateScore();
+                
+                // 生成新食物
+                generateFood();
+                
+                // 检查是否所有知识点都已学习
+                if (learnedKnowledge.length >= knowledgePoints.length) {
+                    showCompletionModal();
+                } else {
+                    // 显示知识点
+                    showKnowledgeModal();
+                }
+            } else {
+                // 移除尾部
+                snake.pop();
+            }
+            
+            // 添加新头部
+            snake.unshift(head);
+            
+            // 绘制游戏
+            draw();
+        }
+        
+        // 绘制游戏
+        function draw() {
+            // 清空画布
+            ctx.fillStyle = '#e8f4f8';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // 绘制蛇
+            ctx.fillStyle = '#3498db';
+            snake.forEach(segment => {
+                ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize - 1, gridSize - 1);
+            });
+            
+            // 绘制食物
+            ctx.fillStyle = '#e74c3c';
+            ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize - 1, gridSize - 1);
+        }
+        
+        // 生成食物
+        function generateFood() {
+            food = {
+                x: Math.floor(Math.random() * (canvas.width / gridSize)),
+                y: Math.floor(Math.random() * (canvas.height / gridSize))
+            };
+            
+            // 确保食物不在蛇身上
+            while (snake.some(segment => segment.x === food.x && segment.y === food.y)) {
+                food = {
+                    x: Math.floor(Math.random() * (canvas.width / gridSize)),
+                    y: Math.floor(Math.random() * (canvas.height / gridSize))
+                };
+            }
+        }
+        
+        // 更新分数
+        function updateScore() {
+            document.getElementById('score').textContent = score;
+        }
+        
+        // 更新知识点计数
+        function updateKnowledgeCount() {
+            document.getElementById('knowledgeCount').textContent = `${learnedKnowledge.length}/${knowledgePoints.length}`;
+        }
+        
+        // 显示知识点弹窗
+        function showKnowledgeModal() {
+            isPaused = true;
+            
+            // 选择知识点
+            if (availableKnowledge.length > 0) {
+                // 随机选择一个知识点
+                const randomIndex = Math.floor(Math.random() * availableKnowledge.length);
+                currentKnowledge = availableKnowledge[randomIndex];
+                
+                const modal = document.getElementById('knowledgeModal');
+                const title = document.getElementById('knowledgeTitle');
+                const body = document.getElementById('knowledgeBody');
+                
+                title.textContent = currentKnowledge.title;
+                body.innerHTML = '<ul>' + currentKnowledge.content.map(item => `<li>${item}</li>`).join('') + '</ul>';
+                
+                modal.style.display = 'flex';
+            } else {
+                // 所有知识点都已学习，显示完成弹窗
+                showCompletionModal();
+                return;
+            }
+        }
+        
+        // 我学会了
+        function learned() {
+            // 将知识点移到已学习列表
+            if (currentKnowledge) {
+                learnedKnowledge.push(currentKnowledge);
+                availableKnowledge = availableKnowledge.filter(k => k !== currentKnowledge);
+                updateKnowledgeCount();
+            }
+            
+            // 关闭弹窗并开始倒计时
+            document.getElementById('knowledgeModal').style.display = 'none';
+            startCountdown();
+        }
+        
+        // 稍后再学
+        function reviewLater() {
+            // 知识点仍在可用列表中
+            document.getElementById('knowledgeModal').style.display = 'none';
+            startCountdown();
+        }
+        
+        // 开始倒计时
+        function startCountdown() {
+            const countdown = document.getElementById('countdown');
+            let count = 3;
+            
+            countdown.textContent = count;
+            countdown.style.display = 'block';
+            
+            const interval = setInterval(() => {
+                count--;
+                if (count > 0) {
+                    countdown.textContent = count;
+                } else {
+                    clearInterval(interval);
+                    countdown.style.display = 'none';
+                    isPaused = false;
+                }
+            }, 1000);
+        }
+        
+        // 暂停游戏
+        function pauseGame() {
+            isPaused = true;
+            
+            const modal = document.getElementById('pauseModal');
+            const learnedList = document.getElementById('learnedKnowledge');
+            
+            // 显示已学习的知识点
+            if (learnedKnowledge.length > 0) {
+                learnedList.innerHTML = learnedKnowledge.map(k => `<li>${k.title}</li>`).join('');
+            } else {
+                learnedList.innerHTML = '<li>还没有学习任何知识点</li>';
+            }
+            
+            modal.style.display = 'flex';
+        }
+        
+        // 继续游戏
+        function resumeGame() {
+            document.getElementById('pauseModal').style.display = 'none';
+            startCountdown();
+        }
+        
+        // 退出游戏
+        function exitGame() {
+            window.location.href = 'index.html';
+        }
+        
+        // 游戏结束
+        function gameOver() {
+            isGameOver = true;
+            clearInterval(gameInterval);
+            
+            const modal = document.getElementById('gameOverModal');
+            const finalScore = document.getElementById('finalScore');
+            const learnedList = document.getElementById('learnedKnowledgeList');
+            
+            finalScore.textContent = score;
+            
+            // 显示已学习的知识点
+            if (learnedKnowledge.length > 0) {
+                learnedList.innerHTML = learnedKnowledge.map(k => `<li>${k.title}</li>`).join('');
+            } else {
+                learnedList.innerHTML = '<li>还没有学习任何知识点</li>';
+            }
+            
+            modal.style.display = 'flex';
+        }
+        
+        // 重新开始
+        function restartGame() {
+            clearInterval(gameInterval);
+            document.getElementById('gameOverModal').style.display = 'none';
+            document.getElementById('completionModal').style.display = 'none';
+            isGameOver = false;
+            init();
+        }
+        
+        // 显示完成弹窗
+        function showCompletionModal() {
+            isGameOver = true;
+            clearInterval(gameInterval);
+            
+            const modal = document.getElementById('completionModal');
+            modal.style.display = 'flex';
+        }
+        
+        // 启动游戏
+        window.onload = init;
+    </script>
+</body>
+</html>

@@ -1,0 +1,968 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background-color: #e6f7ff;
+    background-image: linear-gradient(to bottom, #e6f7ff, #b3e0ff);
+    background-attachment: fixed;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(97, 165, 250, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(97, 165, 250, 0.1) 0%, transparent 50%),
+        linear-gradient(to bottom, #e6f7ff, #b3e0ff);
+}
+
+/* 纸船动画 */
+@keyframes paperBoatFloat {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    25% {
+        transform: translateY(-15px) translateX(10px) rotate(2deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-20px) translateX(20px) rotate(0deg);
+        opacity: 0.9;
+    }
+    75% {
+        transform: translateY(-10px) translateX(30px) rotate(-2deg);
+        opacity: 0.95;
+    }
+    100% {
+        transform: translateY(0) translateX(40px) rotate(0deg);
+        opacity: 0.8;
+    }
+}
+
+/* 纸船样式 */
+.paper-boat {
+    position: fixed;
+    top: 20%;
+    left: 10%;
+    width: 60px;
+    height: 40px;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60"%3E%3Cpath fill="%23ffffff" d="M50 0 L90 30 L50 45 L10 30 Z M50 45 L90 30 L90 60 L10 60 L10 30 Z"/%3E%3C/svg%3E') no-repeat center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: -1;
+    animation: paperBoatFloat 25s ease-in-out infinite;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* 第二个纸船 */
+.paper-boat:nth-child(2) {
+    top: 60%;
+    left: 80%;
+    animation-delay: 5s;
+    animation-duration: 30s;
+    transform: scale(0.8);
+}
+
+/* 第三个纸船 */
+.paper-boat:nth-child(3) {
+    top: 40%;
+    left: 50%;
+    animation-delay: 10s;
+    animation-duration: 20s;
+    transform: scale(0.6);
+}
+
+/* 海洋元素动画 */
+.ocean-wave {
+    position: relative;
+    overflow: hidden;
+}
+
+.ocean-wave::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: -150px;
+    width: 150px;
+    height: 100px;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60"%3E%3Cpath fill="%238B4513" d="M20 50 L80 50 L75 55 L25 55 Z"/%3E%3Cpath fill="%23FFFFFF" d="M50 10 L30 45 L50 45 Z"/%3E%3Cpath fill="%23FFFFFF" d="M50 10 L70 45 L50 45 Z"/%3E%3Cline x1="50" y1="10" x2="50" y2="45" stroke="%23DAA520" stroke-width="2"/%3E%3Cpath fill="%23DAA520" d="M45 45 L55 45 L55 50 L45 50 Z"/%3E%3C/svg%3E') no-repeat center;
+    background-size: contain;
+    animation: boatFlow 20s ease-in-out infinite;
+    transform: translateY(-80%);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+@keyframes boatWave {
+    0% { left: -150px; transform: translateY(0) rotate(0deg); }
+    10% { transform: translateY(0) rotate(0deg); }
+    20% { transform: translateY(-8px) rotate(1.5deg); }
+    30% { transform: translateY(0) rotate(0deg); }
+    40% { transform: translateY(8px) rotate(-1.5deg); }
+    50% { transform: translateY(0) rotate(0deg); }
+    60% { transform: translateY(-8px) rotate(1.5deg); }
+    70% { transform: translateY(0) rotate(0deg); }
+    80% { transform: translateY(8px) rotate(-1.5deg); }
+    90% { transform: translateY(0) rotate(0deg); }
+    100% { left: calc(100% + 150px); transform: translateY(0) rotate(0deg); }
+}
+
+/* 滚动视窗样式 */
+.scroll-window {
+    background: linear-gradient(135deg, #e6f3ff, #b3d9ff);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-content {
+    display: flex;
+    gap: 1.5rem;
+    animation: scroll 20s linear infinite;
+}
+
+.scroll-item {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    min-width: 250px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.scroll-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+@keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* 知识主题选择样式 */
+.knowledge-topics {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.topic-btn {
+    background: linear-gradient(135deg, #2a5298, #61a5fa);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.topic-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #1e3c72, #4a89dc);
+}
+
+.topic-btn.active {
+    background: linear-gradient(135deg, #1e3c72, #4a89dc);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* 知识主题容器 */
+.knowledge-topics {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+/* 知识板块样式 */
+.knowledge-panel {
+    margin-bottom: 2rem;
+}
+
+/* 长方块布局 */
+.knowledge-block {
+    display: flex;
+    background: linear-gradient(135deg, #e6f3ff, #b3d9ff);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    gap: 2rem;
+    min-height: 400px;
+}
+
+/* 左侧轮播图片 */
+.knowledge-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+
+/* 轮播图样式 */
+.image-carousel {
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.carousel-prev, .carousel-next {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+
+/* 知识点轮播样式 */
+.knowledge-carousel-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    background: linear-gradient(135deg, #1a5276, #2a5298);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.knowledge-carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.knowledge-carousel-item {
+    min-width: 100%;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.knowledge-carousel-item:hover {
+    transform: scale(1.02);
+}
+
+.knowledge-carousel-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10px;
+    display: block;
+    background: white;
+}
+
+.knowledge-name {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(26, 82, 118, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.knowledge-carousel-prev,
+.knowledge-carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.knowledge-carousel-prev:hover,
+.knowledge-carousel-next:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.knowledge-carousel-prev {
+    left: 20px;
+}
+
+.knowledge-carousel-next {
+    right: 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .knowledge-carousel-wrapper {
+        max-width: 100%;
+        padding: 1rem;
+    }
+    
+    .knowledge-carousel-item img {
+        height: 300px;
+    }
+    
+    .knowledge-carousel-prev,
+    .knowledge-carousel-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .knowledge-carousel-prev {
+        left: 10px;
+    }
+    
+    .knowledge-carousel-next {
+        right: 10px;
+    }
+}
+
+/* 故事按钮样式 */
+.story-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.story-btn {
+    background: linear-gradient(135deg, #2a5298, #61a5fa);
+    color: white;
+    border: none;
+    padding: 1.25rem 2rem;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.story-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #1e3c72, #4a89dc);
+}
+
+/* 学习工具样式 */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tool-card {
+    background: #f9f9f9;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-top: 5px solid #61a5fa;
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #2a5298, #61a5fa);
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.tool-card h4 {
+    color: #1e3c72;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.tool-card p {
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.tool-link {
+    display: inline-block;
+    background: linear-gradient(135deg, #2a5298, #61a5fa);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tool-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #1e3c72, #4a89dc);
+}
+
+/* 头部样式 */
+header {
+    background: linear-gradient(135deg, #1a5276, #2471a3);
+    color: white;
+    padding: 3.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #5dade2;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    animation: wave 15s linear infinite;
+}
+
+@keyframes wave {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 0; }
+}
+
+/* 船效果 */
+header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: -150px;
+    width: 120px;
+    height: 80px;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60"%3E%3Cpath fill="%238B4513" d="M20 50 L80 50 L75 55 L25 55 Z"/%3E%3Cpath fill="%23FFFFFF" d="M50 10 L30 45 L50 45 Z"/%3E%3Cpath fill="%23FFFFFF" d="M50 10 L70 45 L50 45 Z"/%3E%3Cline x1="50" y1="10" x2="50" y2="45" stroke="%23DAA520" stroke-width="2"/%3E%3Cpath fill="%23DAA520" d="M45 45 L55 45 L55 50 L45 50 Z"/%3E%3C/svg%3E') no-repeat center;
+    background-size: contain;
+    animation: boatWave 35s ease-in-out infinite;
+    z-index: 10;
+}
+
+@keyframes waveMove {
+    0% { background-position: 0 0; }
+    50% { background-position: 720px 0; }
+    100% { background-position: 1440px 0; }
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.3rem;
+    position: relative;
+    z-index: 1;
+    opacity: 0.95;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 导航栏样式 */
+nav {
+    background: #1a5276;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border-bottom: 2px solid #5dade2;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+nav ul li {
+    margin: 0 0.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 28px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+nav ul li a:hover::before {
+    left: 100%;
+}
+
+nav ul li a:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+nav ul li a.active {
+    background: rgba(97, 165, 250, 0.25);
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 1px solid rgba(97, 165, 250, 0.3);
+}
+
+/* 主内容样式 */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 18px;
+    padding: 2.8rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(97, 165, 250, 0.1);
+}
+
+section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    border: 1px solid rgba(97, 165, 250, 0.2);
+}
+
+section h2 {
+    color: #1a5276;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 3px solid #2471a3;
+    font-size: 2.2rem;
+    position: relative;
+    font-weight: 700;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: #5dade2;
+}
+
+section h3 {
+    color: #2471a3;
+    margin: 2.2rem 0 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    position: relative;
+    padding-left: 15px;
+}
+
+section h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #5dade2;
+}
+
+section h4 {
+    color: #1a5276;
+    margin: 1.2rem 0 0.6rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* 知识点卡片样式 */
+.knowledge-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-left: 6px solid #2471a3;
+    padding: 1.8rem;
+    margin-bottom: 1.8rem;
+    border-radius: 0 12px 12px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(97, 165, 250, 0.1);
+    border-right: 1px solid rgba(97, 165, 250, 0.1);
+    border-bottom: 1px solid rgba(97, 165, 250, 0.1);
+}
+
+.knowledge-card:hover {
+    transform: translateX(8px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    border-left-color: #5dade2;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.knowledge-card h4 {
+    margin-top: 0;
+    color: #1a5276;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* 故事卡片样式 */
+.story-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 18px;
+    padding: 2.2rem;
+    margin-bottom: 2.2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(97, 165, 250, 0.1);
+}
+
+.story-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #2471a3, #5dade2);
+}
+
+.story-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: 1px solid rgba(97, 165, 250, 0.2);
+}
+
+.story-card h4 {
+    color: #1a5276;
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.story-card p {
+    margin-bottom: 1.8rem;
+    line-height: 1.75;
+    color: #34495e;
+}
+
+.story-card .source {
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    border-top: 1px solid rgba(97, 165, 250, 0.2);
+    padding-top: 1.2rem;
+    margin-top: 1.2rem;
+}
+
+/* 出门票样式 */
+#tickets {
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    text-align: center;
+}
+
+#tickets h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #61a5fa;
+}
+
+.tickets-carousel {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.ticket-item {
+    min-width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.ticket-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center bottom;
+    transition: transform 0.3s ease;
+}
+
+.ticket-item:hover img {
+    transform: scale(1.05);
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.carousel-controls button {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-controls button:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+footer {
+    background: #1a5276;
+    color: white;
+    text-align: center;
+    padding: 2.5rem;
+    margin-top: 3.5rem;
+    border-top: 5px solid #2471a3;
+    position: relative;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #5dade2, #2471a3);
+}
+
+/* 移除波浪效果 */
+footer::after {
+    content: none;
+}
+
+footer p {
+    margin: 0;
+    opacity: 0.95;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* 视频容器样式 */
+.video-container {
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: #f0f0f0;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+    
+    nav ul li a {
+        display: block;
+        width: 200px;
+        text-align: center;
+    }
+    
+    main {
+        padding: 0 1rem;
+    }
+    
+    section {
+        padding: 1.5rem;
+    }
+    
+    section h2 {
+        font-size: 1.5rem;
+    }
+    
+    section h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 2rem 1rem;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    section {
+        padding: 1.2rem;
+    }
+    
+    .knowledge-card,
+    .story-card {
+        padding: 1rem;
+    }
+}
